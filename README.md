@@ -1,5 +1,7 @@
 # Nest
 
+[![codecov](https://codecov.io/gh/damianopetrungaro/nest/branch/main/graph/badge.svg?token=FMSFGJNSEX)](https://codecov.io/gh/damianopetrungaro/nest)
+
 Nest is a `io.Writer` implementation which allow you to nested content,
 taking care of indenting the content and adding titles to each section.
 
