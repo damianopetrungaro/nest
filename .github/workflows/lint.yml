@@ -1,0 +1,14 @@
+name: ci
+
+on: [push]
+
+jobs:
+  lint:
+    runs-on: Ubuntu-20.04
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions-contrib/golangci-lint@master
+        with:
+          args: run ./...
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
