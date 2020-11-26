@@ -23,4 +23,4 @@ To interact with simplified APIs, but not compliant with the `io.Writer` there i
 
 ### Examples
 
-For the writer take a look at the `nest_doc_test.go` file, for the simple writer take a look at the `simple_doc_test.go` file
+For the writer take a look at the `nest_example_test.go` file, for the simple writer take a look at the `simple_example_test.go` file

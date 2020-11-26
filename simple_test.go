@@ -163,7 +163,7 @@ func TestSimpleRaceConditions(t *testing.T) {
 	for i := 1; i <= pool; i++ {
 		go func(i int) {
 			base.Write("hello")
-			base.WriteTo(ioutil.Discard)
+			_, _ = base.WriteTo(ioutil.Discard)
 			wg.Done()
 		}(i)
 	}

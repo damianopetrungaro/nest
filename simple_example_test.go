@@ -5,7 +5,7 @@ import (
 	"sync"
 )
 
-func ExampleSimple() {
+func ExampleSimpleWriter() {
 	base := NewSimpleWriter()
 
 	orderedList := base.Child("This is the start of the ordered list")
@@ -43,7 +43,7 @@ func ExampleSimple() {
 	//     - Item three
 }
 
-func ExampleSimple_concurrent() {
+func ExampleSimpleWriter_concurrent() {
 	wg := sync.WaitGroup{}
 	base := NewSimpleWriter()
 
@@ -104,11 +104,11 @@ func ExampleSimple_concurrent() {
 	//     - Item three
 }
 
-func ExampleNewSimple() {
+func ExampleNewSimpleWriter() {
 	_ = NewSimpleWriter()
 }
 
-func ExampleSimple_Child_with_content() {
+func ExampleSimpleWriter_Child_with_content() {
 	n := NewSimpleWriter()
 	n = n.Child("")
 
@@ -121,7 +121,7 @@ func ExampleSimple_Child_with_content() {
 	//     indented
 }
 
-func ExampleSimple_Child_without_content() {
+func ExampleSimpleWriter_Child_without_content() {
 	n := NewSimpleWriter()
 	n = n.Child("Section 1")
 
@@ -135,7 +135,7 @@ func ExampleSimple_Child_without_content() {
 	//     indented
 }
 
-func ExampleSimple_Write() {
+func ExampleSimpleWriter_Write() {
 	n := NewSimpleWriter()
 	n.Write("line one")
 	if _, err := n.WriteTo(os.Stdout); err != nil {
@@ -145,7 +145,7 @@ func ExampleSimple_Write() {
 	// line one
 }
 
-func ExampleSimple_Write_multiline() {
+func ExampleSimpleWriter_Write_multiline() {
 	n := NewSimpleWriter()
 	n.Write("line one\nline two")
 	if _, err := n.WriteTo(os.Stdout); err != nil {
@@ -156,7 +156,7 @@ func ExampleSimple_Write_multiline() {
 	// line two
 }
 
-func ExampleSimple_WriteTo() {
+func ExampleSimpleWriter_WriteTo() {
 	n := NewSimpleWriter()
 
 	if _, err := n.WriteTo(os.Stdout); err != nil {

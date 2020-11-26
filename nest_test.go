@@ -227,8 +227,8 @@ func TestWriterRaceConditions(t *testing.T) {
 	wg.Add(pool)
 	for i := 1; i <= pool; i++ {
 		go func(i int) {
-			base.WriteString("hello")
-			base.WriteTo(ioutil.Discard)
+			_,_ = base.WriteString("hello")
+			_,_ = base.WriteTo(ioutil.Discard)
 			wg.Done()
 		}(i)
 	}
